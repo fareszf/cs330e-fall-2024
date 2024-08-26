@@ -38,7 +38,8 @@
   UTCS password when prompted (cursor won't move).
 
 8. make Command:
-   Example: Target: dependencies
+   Example: 
+   Target: dependencies
       actions to generate Target 
 
 - Whitespace Sensitive.
