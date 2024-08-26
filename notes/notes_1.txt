@@ -2,7 +2,8 @@
 
 Origin:
 
-The term "software engineering" emerged at a NATO conference in Germany in 1968 to address a software crisis caused by increasing hardware complexity and development challenges.
+The term "software engineering" emerged at a NATO conference in Germany in 1968 to address a software crisis 
+caused by increasing hardware complexity and development challenges.
 
 Crisis Manifestations:
 
@@ -28,4 +29,6 @@ Source: Sommerville, Software Engineering, 10th ed., Chapter 2
 
 Definition:
 
-According to IEEE, Software Engineering is the application of a systematic, disciplined, quantifiable approach to software development, operation, and maintenance, and the study of these approaches; that is, the application of engineering to software.
+According to IEEE, Software Engineering is the application of a systematic, disciplined, 
+quantifiable approach to software development, operation, and maintenance, and 
+the study of these approaches; that is, the application of engineering to software.
