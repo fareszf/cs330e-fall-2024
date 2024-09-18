@@ -24,7 +24,7 @@ class MyUnitTests (TestCase) :
     def test (self) :
         self.assertEqual(cycle_length(3), 8)
 
-if __name__ == "__main__" :
+if __name__ == "__main__" : #pragma: no cover
     main()
 
 """ #pragma: no cover
