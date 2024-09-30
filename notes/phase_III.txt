@@ -1,6 +1,6 @@
 Project #1: Phase III
 ----------------------
-- Cache
+- Cache: can be defined as an array or dictionary of pre computed values.
    Lazy cache caches values upon request
    Eager cache caches before all requests
    Meta cache
