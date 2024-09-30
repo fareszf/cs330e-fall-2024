@@ -1,0 +1,51 @@
++ vs += 
+-------
+`a += b` is the same as `a = a + b` only if `a` and `b` are immutable. Otherwise, `+` returns a newly allocated object, while `+=` modifies the object in place.
+
+- `+` always returns a newly allocated object.
+- `+=` should (but doesn’t have to) modify the object in place if it’s mutable.
+
+Example:
+----------
+>>> x = 10
+>>> y = 10
+>>> id(x)
+1582465424
+>>> id(y)
+1582465424
+>>> x += 1
+>>> id(x)
+1582465456
+
+>>> x = 10
+>>> y = 10
+>>> id(x)
+1582465424
+>>> id(y)
+1582465424
+>>> x = x + 1
+>>> id(x)
+1582465456
+
+>>> x = [2, 3]
+>>> id(x)
+2194172870024
+>>> x += [1]
+>>> x
+[2, 3, 1]
+>>> id(x)
+2194172870024
+
+>>> x = [2, 3]
+>>> id(x)
+2194172879624
+>>> x = x + [1]
+>>> x
+[2, 3, 1]
+>>> id(x)
+2194172879560
+
+List Operations:
+- `list += list` or `tuple`
+- `list + list`
+
