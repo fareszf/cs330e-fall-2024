@@ -1,0 +1,146 @@
+Iteration:
+------------
+Iterables:
+- An iterable is an object that you can iterate through.
+- Iterables usually have the property `__getitem__`, indicating the object is indexable.
+
+>>> x = [2, 3, 4]
+>>> hasattr(x, "__iter__")
+True
+>>> hasattr(x, "__getitem__")
+True
+>>> hasattr(x, "__next__")
+False
+
+Iterators vs. Generators:
+- An iterator object has both `__iter__` and `__next__` attributes.
+- You can obtain an iterator from an iterable using the `iter()` function.
+- Generator functions allow you to define a function that behaves like an iterator and can be used in a for loop.
+- Every generator is an iterator.
+
+Using `iter()`:
+>>> x = [2, 3, 4]
+>>> p = iter(x)
+>>> next(p)
+2
+>>> next(p)
+3
+>>> next(p)
+4
+>>> next(p)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+
+------------
+Sources:
+- https://nvie.com/posts/iterators-vs-generators/
+- https://data-flair.training/blogs/python-generator-vs-iterator/
+
+Exception Handling:
+-------------
+Why do we need exception handling?
+Errors in a Python module produce a traceback error and stop the execution of the module. Such errors are useful for developers but not for users. Anticipate sections of your code that may cause an error and place them inside try-except blocks. If the code in the try section works, the except block is skipped; otherwise, execution jumps to the except section.
+
+Structure:
+try:
+    pass
+except:  # This will catch all exceptions.
+    pass
+# [except Exception as e:
+#     print(e)]  # Saves the exception to variable e
+else:
+    pass
+finally:
+    pass
+
+
+Mutables vs. Immutables:
+----------------------
+Mutables are objects that can be changed after creation. Examples include list, set, and dict.
+Immutables are objects that cannot be changed after creation, and attempts to modify them may result in creating a new object. Examples include tuples, frozensets, str, int, etc.
+
+Iterators:
+---------
+One way to obtain an iterator from an iterable is to apply the function `iter` on the iterable.
+
+Example:
+>>> x = [1, 2, 3]
+>>> y = iter(x)
+
+If y is an iterator, it must have the attribute `__next__`:
+>>> hasattr(y, "__next__")
+True
+
+Is y also an iterable? Let's check if it has the attribute `__iter__`:
+>>> hasattr(y, "__iter__")
+True
+
+Is y indexable? No.
+>>> hasattr(y, "__getitem__")
+False
+
+Is y exhaustible? Yes.
+>>> list(y)
+[1, 2, 3]
+>>> list(y)
+[]
+
+Since y is iterable, you can iterate through its elements by either placing the object x in a for statement or by using the `next()` function:
+>>> y = iter(x)
+>>> next(y)
+1
+>>> next(y)
+2
+>>> next(y)
+3
+>>> next(y)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+
+Note that when you consume all values in y and try to run `next(y)`, a StopIteration will be raised.
+
+--------------
+Limitations of Iterators:
+- `list(iterator)` and `len(iterator) == 0`
+Iterators might generate values indefinitely, e.g., `count()` in `itertools`.
+
+- If `iterator` or `if (iterator == [])`:
+Example:
+>>> x = []
+>>> y = iter(x)
+>>> y
+<list_iterator object at 0x000001A70B1CAEF0>
+>>> if y:
+...    print("Full List")
+... else:
+...    print("Empty List")
+...
+Full List
+
+Indexables:
+---------
+If an iterable is indexable, you can access its elements via an index, and the elements are finite.
+If an iterable is not indexable, it might be infinite, and you cannot access its elements via an index. 
+For example, if x is not indexable, to iterate through its elements, you may either do `for i in x:` or use `p = iter(x); val = next(p); ...`
+
+-------------
+Operators.py
+-------------
+Boolean operators are typically used on boolean values. Examples include and, or, not.
+Bitwise operators are typically used on integral values (used to compare integers in their binary format). Examples include ~, |, &, >>, <<
+
+Operator precedence:
+https://www.programiz.com/python-programming/precedence-associativity
+
+Example:
+i = 8
+j = not i & (i - 1)
+assert j is True  # power of 2
+The expression `i & (i - 1)` will be evaluated first since & has higher precedence than not.
+i.e., 1000 & 0111 results in False.
+
+j = not False
+
+j = True
