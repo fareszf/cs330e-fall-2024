@@ -144,3 +144,5 @@ i.e., 1000 & 0111 results in False.
 j = not False
 
 j = True
+
+note: to suppress warning messages use -E flag. Example, "python -W ignore::SyntaxWarning Operators.py"
