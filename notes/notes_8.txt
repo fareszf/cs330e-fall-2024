@@ -140,6 +140,18 @@ zip is a generator that combines two objects in a tuple.
 >>> list(c)
 []
 
+----------
+map function:
+------------
+map(function_to_apply, list_of_inputs)
+
+Example
+>>> items = [1, 2, 3, 4, 5]
+>>> squared = list(map(lambda x: x**2, items))
+>>> squared
+[1, 4, 9, 16, 25]
+>>>
+
 
 ----------
 RMSE:
@@ -218,16 +230,5 @@ sqrt(mean(square(subtract(a, p))))
 a,p are two iterables
 ----------------------
 
-----------
-map function:
-------------
-map(function_to_apply, list_of_inputs)
-
-Example
->>> items = [1, 2, 3, 4, 5]
->>> squared = list(map(lambda x: x**2, items))
->>> squared
-[1, 4, 9, 16, 25]
->>>
 
 
