@@ -1,17 +1,30 @@
 import json
 # Dictionary
+# A Python dictionary is created with details about a person,
+# including nested objects (address) and arrays (children).
 person = { "name": "John Smith", 
            "age": 35, 
            "address": {"street": "5 main St.", "city": "Austin"}, 
            "children": ["Mary", "Abel"], 
            "has_car": None }
 
-# Converting the Dictionary into a JSON file
+# Convert the person dictionary into JSON format 
+# and writes it to a file named person_to_json.json.
 with open('person_to_json.json', 'w') as fp:
     json.dump(person, fp, indent=4)
+# json.dump: Writes a Python object directly to a file
+# in JSON format.
 
-# Converting a Python object into a JSON string.    
-js = json.dumps(person)   
+
+# Converts the person dictionary into a JSON string 
+# using json.dumps() and assigns it to js.   
+js = json.dumps(person) 
+json.dumps
+# json.dumps: Converts a Python object 
+# into a JSON-formatted string.
+
+
+  
 assert js ==  '{"name": "John Smith", \
 "age": 35, \
 "address": {"street": "5 main St.", "city": "Austin"}, \
@@ -19,7 +32,10 @@ assert js ==  '{"name": "John Smith", \
 "has_car": null}'
                 
        
-# Converting the JSON file "person_to_json.json" into a Dictionary
+# Defines a function load_json(filename) that reads 
+# a JSON file and converts its contents back into 
+# a Python dictionary.
+
 def load_json(filename):
     with open(filename) as file:
         jsn = json.load(file)
