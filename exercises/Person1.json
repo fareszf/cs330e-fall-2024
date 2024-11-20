@@ -1,0 +1,16 @@
+{
+  "name": "Alice Johnson",
+  "age": 42,
+  "address": {
+    "street": "789 Oak Avenue",
+    "city": "Metropolis"
+  },
+  "children": [
+    "Tom Johnson",
+    "Lucy Johnson",
+    {
+      "name": "Sam Johnson",
+      "age": 8
+    }
+  ]
+}
